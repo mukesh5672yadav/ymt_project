@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Button</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input {
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Dynamic Button Creator</h2>
+
+  <form id="buttonForm">
+    <label for="color">Background Color:</label>
+    <input type="text" id="color" placeholder="Enter a color (e.g., red)">
+
+    <label for="fontSize">Font Size (px):</label>
+    <input type="number" id="fontSize" placeholder="Enter font size in px">
+
+    <label for="text">Button Text:</label>
+    <input type="text" id="text" placeholder="Enter button text">
+  </form>
+
+  
+  <button id="dynamicButton">Sample Button</button>
+
+  <script>
+    
+    const colorInput = document.getElementById("color");
+    const fontSizeInput = document.getElementById("fontSize");
+    const textInput = document.getElementById("text");
+    const dynamicButton = document.getElementById("dynamicButton");
+
+    
+    colorInput.addEventListener("input", () => {
+      dynamicButton.style.backgroundColor = colorInput.value;
+    });
+
+    fontSizeInput.addEventListener("input", () => {
+      dynamicButton.style.fontSize = fontSizeInput.value + "px";
+    });
+
+    textInput.addEventListener("input", () => {
+      dynamicButton.textContent = textInput.value;
+    });
+  </script>
+</body>
+</html>
